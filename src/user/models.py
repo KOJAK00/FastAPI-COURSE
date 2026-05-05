@@ -6,7 +6,6 @@ class UserModel(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    username = Column(String,nullable=False)
+    username = Column(String,nullable=False,unique=True)
     hash_password = Column(String,nullable=False)
-    email = Column(String)
-    
+    email = Column(String,unique=True)
