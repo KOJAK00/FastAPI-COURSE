@@ -1,0 +1,7 @@
+fastapi[standard]
+uvicorn
+sqlalchemy
+pwdlib[argon2]
+pwdlib
+pyjwt
+alembic
