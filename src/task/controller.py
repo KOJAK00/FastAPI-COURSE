@@ -27,7 +27,7 @@ def get_taskid(id: int,db:Session):
         raise HTTPException(status_code=404, detail=f"Task with id {id} not found")
     return task
 
-def update_task(id:int,body : TaskSchema ,db:Session,user):
+def update_task(id:int,body : TaskSchema ,db:Session,user:TaskModel):
     one_task:TaskModel = db.query(TaskModel).get(id)
     if not one_task:
         raise HTTPException(status_code=404, detail=f"Task with id {id} not found")

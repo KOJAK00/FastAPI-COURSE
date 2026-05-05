@@ -22,8 +22,8 @@ def get_task_by_id(id : int,db = Depends(get_db),user : UserModel = Depends(is_a
 
 @task_routes.put("/update/{id}",response_model=TaskResponseSchema,status_code=status.HTTP_201_CREATED)
 def update_task(id : int,body : TaskSchema,db=Depends(get_db),user : UserModel = Depends(is_authenticated)):
-    return controller.update_task(id,body,db)
+    return controller.update_task(id,body,db,user)
 
 @task_routes.delete("/delete/{id}",status_code=status.HTTP_204_NO_CONTENT)
 def delete_task(id : int,db=Depends(get_db),user : UserModel = Depends(is_authenticated)):
-    return controller.delete_task(id,db)
+    return controller.delete_task(id,db,user)
